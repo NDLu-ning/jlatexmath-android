@@ -66,6 +66,15 @@ public class MacroInfo {
 		this(null, (Method) null, nbArgs);
 	}
 
+	public MacroInfo(Class clazz, String methodName, float nbArgs) {
+		this(clazz.getCanonicalName(), methodName, nbArgs);
+	}
+
+	public MacroInfo(Class clazz, String methodName, float nbArgs,
+					 float posOpts) {
+		this(clazz.getCanonicalName(), methodName, nbArgs, posOpts);
+	}
+
 	public MacroInfo(String className, String methodName, float nbArgs) {
 		int nba = (int) nbArgs;
 		Class[] args = new Class[] { TeXParser.class, String[].class };

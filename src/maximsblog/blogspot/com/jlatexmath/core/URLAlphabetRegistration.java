@@ -33,6 +33,8 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.lang.ClassLoader;
 
+import maximsblog.blogspot.com.jlatexmath.Constants;
+
 public class URLAlphabetRegistration implements AlphabetRegistration {
 
 	private URL url;
@@ -60,7 +62,7 @@ public class URLAlphabetRegistration implements AlphabetRegistration {
 	public Object getPackage() throws AlphabetRegistrationException {
 		URL urls[] = { url };
 		language = language.toLowerCase();
-		String name = "maximsblog.blogspot.com.jlatexmath.core." + language + "."
+		String name = Constants.JLATEX_MATH_PACKAGE + ".core." + language + "."
 				+ Character.toString(Character.toUpperCase(language.charAt(0)))
 				+ language.substring(1, language.length()) + "Registration";
 

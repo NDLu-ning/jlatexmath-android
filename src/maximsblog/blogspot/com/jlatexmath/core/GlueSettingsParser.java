@@ -44,7 +44,7 @@ import org.w3c.dom.NodeList;
  */
 public class GlueSettingsParser {
 
-	private static final String RESOURCE_NAME = "GlueSettings.xml";
+	private static final String RESOURCE_NAME = "latex/GlueSettings.xml";
 
 	private final Map<String, Integer> typeMappings = new HashMap<String, Integer>();
 	private final Map<String, Integer> glueTypeMappings = new HashMap<String, Integer>();

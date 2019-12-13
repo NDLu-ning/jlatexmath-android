@@ -44,7 +44,7 @@ import org.w3c.dom.NodeList;
  */
 public class TeXSymbolParser {
 
-	public static final String RESOURCE_NAME = "TeXSymbols.xml",
+	public static final String RESOURCE_NAME = "latex/TeXSymbols.xml",
 			DELIMITER_ATTR = "del", TYPE_ATTR = "type";
 
 	private static Map<String, Integer> typeMappings = new HashMap<String, Integer>();

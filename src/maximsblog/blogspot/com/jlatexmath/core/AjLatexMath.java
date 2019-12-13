@@ -11,13 +11,18 @@ public class AjLatexMath {
 	private static Context mContext;
 	private static Paint st;
 
-	public static void init(Context context) {
+	/**
+	 * 初始化画笔以及公式解析类
+	 *
+	 * @param context
+	 */
+	public static synchronized void init(Context context) {
+		if (mContext != null) {
+			return;
+		}
 		mContext = context;
-		st = new Paint();
-		st.setStyle(Style.FILL_AND_STROKE);
-		st.setColor(Color.BLACK);
-		st.setStrokeWidth(1);
-		new TeXFormula();
+		st = getPaint();
+		TeXFormula.getPartialTeXFormula("{x^{2}+ x-1= 0 }").setDEBUG(false);
 	}
 
 	public static AssetManager getAssetManager() {
@@ -25,14 +30,32 @@ public class AjLatexMath {
 		return mng;
 	}
 
+	/**
+	 * 同步画笔颜色，使生成图片与文字夜色一致
+	 *
+	 * @param color
+	 */
+	@Deprecated
+	public static void setColor(int color) {
+		if (st == null) {
+			init(mContext);
+		}
+		st.setColor(color);
+	}
+
 	public static Context getContext() {
 		return mContext;
 	}
 
 	public static Paint getPaint() {
-		return st;
+		Paint p = new Paint();
+		p.setStyle(Style.FILL_AND_STROKE);
+		p.setColor(Color.BLACK);
+		p.setStrokeWidth(0);
+		return p;
 	}
-	
+
+	@Deprecated
 	public static float getLeading(float textSize){
 		st.setTextSize(textSize);
 		return st.getFontSpacing();

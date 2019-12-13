@@ -45,8 +45,7 @@ public class NewCommandMacro {
 		// throw new ParseException("Command " + name +
 		// " already exists ! Use renewcommand instead ...");
 		macrocode.put(name, code);
-		MacroInfo.Commands.put(name, new MacroInfo(
-				"maximsblog.blogspot.com.jlatexmath.core.NewCommandMacro", "executeMacro",
+		MacroInfo.Commands.put(name, new MacroInfo(NewCommandMacro.class, "executeMacro",
 				nbargs));
 	}
 
@@ -57,8 +56,7 @@ public class NewCommandMacro {
 					+ " already exists ! Use renewcommand instead ...");
 		macrocode.put(name, code);
 		macroreplacement.put(name, def);
-		MacroInfo.Commands.put(name, new MacroInfo(
-				"maximsblog.blogspot.com.jlatexmath.core.NewCommandMacro", "executeMacro",
+		MacroInfo.Commands.put(name, new MacroInfo(NewCommandMacro.class, "executeMacro",
 				nbargs, 1));
 	}
 
@@ -71,8 +69,7 @@ public class NewCommandMacro {
 			throw new ParseException("Command " + name
 					+ " is not defined ! Use newcommand instead ...");
 		macrocode.put(name, code);
-		MacroInfo.Commands.put(name, new MacroInfo(
-				"maximsblog.blogspot.com.jlatexmath.core.NewCommandMacro", "executeMacro",
+		MacroInfo.Commands.put(name, new MacroInfo(NewCommandMacro.class, "executeMacro",
 				nbargs));
 	}
 

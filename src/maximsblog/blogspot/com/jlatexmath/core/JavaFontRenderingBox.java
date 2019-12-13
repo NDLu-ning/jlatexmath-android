@@ -37,6 +37,7 @@ import android.content.res.AssetManager;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 
 /**
@@ -47,7 +48,7 @@ public class JavaFontRenderingBox extends Box {
 	// private static final Graphics2D TEMPGRAPHIC = new BufferedImage(1, 1,
 	// BufferedImage.TYPE_INT_ARGB).createGraphics();
 
-	private static Typeface font = Typeface.SERIF;
+	private static Typeface font = Typeface.DEFAULT;
 
 	private String str;
 	private float size;
@@ -74,19 +75,17 @@ public class JavaFontRenderingBox extends Box {
 			boolean kerning) {
 		this.str = str;
 		this.size = size;
-		/*
-		 * if (kerning && KERNING != null) { Map<TextAttribute, Object> map =
-		 * new Hashtable<TextAttribute, Object>(); map.put(KERNING, KERNING_ON);
-		 * map.put(LIGATURES, LIGATURES_ON); f = f.deriveFont(map); }
-		 */
-
-		// this.text = new TextLayout(str, f.deriveFont(type),
-		// TEMPGRAPHIC.getFontRenderContext());
-		// Rectangle2D rect = text.getBounds();
-		// this.height = (float) (-rect.getY() * size / 10);
-		// this.depth = (float) (rect.getHeight() * size / 10) - this.height;
-		// this.width = (float) ((rect.getWidth() + rect.getX() + 0.4f) * size /
-		// 10);
+		//计算出文字需要的宽高
+//		Paint pFont=AjLatexMath.getPaint();
+//		pFont.setTextSize(AjLatexMath.getTextSize());
+		Paint pFont =new Paint();
+		Rect rect = new Rect();
+		pFont.getTextBounds(str, 0, str.length(), rect);
+		 this.height = -rect.top * size / 2;
+		 this.depth = (rect.height() * size / 2) - this.height;
+		 this.width = (rect.width() + rect.right + 0.4f) * size /
+		 4;
+//		System.out.println(" width="+width+" height="+height+" text="+str);
 	}
 
 	public JavaFontRenderingBox(String str, int type, float size) {
@@ -100,18 +99,20 @@ public class JavaFontRenderingBox extends Box {
 
 	public void draw(Canvas g2, float x, float y) {
 		drawDebug(g2, x, y);
-		Paint st = AjLatexMath.getPaint();
+//		Paint st=AjLatexMath.getPaint();
+//		st.setTextSize(AjLatexMath.getTextSize());
+		Paint st =new Paint();
 		float w = st.getStrokeWidth();
 		Style s = st.getStyle();
 		Typeface f = st.getTypeface();
 
-		st.setStrokeWidth(1);
+		st.setStrokeWidth(0);
 		st.setStyle(Style.FILL_AND_STROKE);
 		st.setTypeface(font);
 		g2.save();
 		g2.translate(x, y);
-		g2.scale(0.1f * size, 0.1f * size);
-		g2.drawText(str, x, y, st);
+		g2.scale(0.5f * size, 0.5f * size);
+//		g2.drawText(str, x, y, st);
 		g2.drawText(str, 0, 0, st);
 		g2.restore();
 		st.setStyle(s);

@@ -46,6 +46,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.Character.UnicodeBlock;
 
+import maximsblog.blogspot.com.jlatexmath.Constants;
 import maximsblog.blogspot.com.jlatexmath.R;
 import android.annotation.SuppressLint;
 import android.content.res.AssetManager;
@@ -150,14 +151,15 @@ public class TeXFormula {
 			DefaultTeXFont
 					.registerAlphabet((AlphabetRegistration) Class
 							.forName(
-									"maximsblog.blogspot.com.jlatexmath.cyrillic.CyrillicRegistration")
+									Constants.JLATEX_MATH_PACKAGE + ".cyrillic.CyrillicRegistration")
 							.newInstance());
 			DefaultTeXFont
 					.registerAlphabet((AlphabetRegistration) Class
 							.forName(
-									"maximsblog.blogspot.com.jlatexmath.greek.GreekRegistration")
+									Constants.JLATEX_MATH_PACKAGE + ".greek.GreekRegistration")
 							.newInstance());
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 		setDefaultDPI();
@@ -215,7 +217,7 @@ public class TeXFormula {
 
 	/**
 	 * Set the DPI of target
-	 * 
+	 *
 	 * @param dpi
 	 *            the target DPI
 	 */
@@ -435,6 +437,10 @@ public class TeXFormula {
 		}
 
 		return f;
+	}
+
+	public boolean isEmpty() {
+		return root == null || root instanceof EmptyAtom;
 	}
 
 	/**
@@ -674,7 +680,7 @@ public class TeXFormula {
 	/**
 	 * Apply the Builder pattern instead of using the createTeXIcon(...)
 	 * factories
-	 * 
+	 *
 	 * @author Felix Natter
 	 *
 	 */
@@ -693,7 +699,7 @@ public class TeXFormula {
 
 		/**
 		 * Specify the style for rendering the given TeXFormula
-		 * 
+		 *
 		 * @param style
 		 *            the style
 		 * @return the builder, used for chaining
@@ -705,7 +711,7 @@ public class TeXFormula {
 
 		/**
 		 * Specify the font size for rendering the given TeXFormula
-		 * 
+		 *
 		 * @param size
 		 *            the size
 		 * @return the builder, used for chaining
@@ -717,7 +723,7 @@ public class TeXFormula {
 
 		/**
 		 * Specify the font type for rendering the given TeXFormula
-		 * 
+		 *
 		 * @param type
 		 *            the font type
 		 * @return the builder, used for chaining
@@ -729,7 +735,7 @@ public class TeXFormula {
 
 		/**
 		 * Specify the background color for rendering the given TeXFormula
-		 * 
+		 *
 		 * @param fgcolor
 		 *            the foreground color
 		 * @return the builder, used for chaining
@@ -742,7 +748,7 @@ public class TeXFormula {
 		/**
 		 * Specify the "true values" parameter for rendering the given
 		 * TeXFormula
-		 * 
+		 *
 		 * @param trueValues
 		 *            the "true values" value
 		 * @return the builder, used for chaining
@@ -755,7 +761,7 @@ public class TeXFormula {
 		/**
 		 * Specify the width of the formula (may be exact or maximum width, see
 		 * {@link #setIsMaxWidth(boolean)})
-		 * 
+		 *
 		 * @param widthUnit
 		 *            the width unit
 		 * @param textWidth
@@ -775,7 +781,7 @@ public class TeXFormula {
 
 		/**
 		 * Specifies whether the width is the exact or the maximum width
-		 * 
+		 *
 		 * @param isMaxWidth
 		 *            whether the width is a maximum width
 		 * @return the builder, used for chaining
@@ -815,7 +821,7 @@ public class TeXFormula {
 		/**
 		 * Specify the inter line spacing unit and value. NOTE: this is required
 		 * for automatic linebreaks to work!
-		 * 
+		 *
 		 * @param interLineUnit
 		 *            the unit
 		 * @param interLineSpacing
@@ -836,7 +842,7 @@ public class TeXFormula {
 		/**
 		 * Create a TeXIcon from the information gathered by the (chained)
 		 * setXXX() methods. (see Builder pattern)
-		 * 
+		 *
 		 * @return the TeXIcon
 		 */
 		public TeXIcon build() {

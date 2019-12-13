@@ -42,7 +42,7 @@ public class HorizontalRule extends Box {
     
     private Integer color = null;
     private float speShift = 0;;
-    
+
     public HorizontalRule(float thickness, float width, float s) {
 	height = thickness;
 	this.width = width;

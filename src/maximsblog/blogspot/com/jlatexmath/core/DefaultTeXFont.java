@@ -216,9 +216,9 @@ public class DefaultTeXFont implements TeXFont {
 
 	public static void addAlphabet(Character.UnicodeBlock alphabet, String name)
 			throws ResourceParseException, IOException {
-		String lg = "fonts/" + name + "/language_" + name + ".xml";
-		String sym = "fonts/" + name + "/symbols_" + name + ".xml";
-		String map = "fonts/" + name + "/mappings_" + name + ".xml";
+		String lg = "latex/fonts/" + name + "/language_" + name + ".xml";
+		String sym = "latex/fonts/" + name + "/symbols_" + name + ".xml";
+		String map = "latex/fonts/" + name + "/mappings_" + name + ".xml";
 
 		try {
 			DefaultTeXFont.addAlphabet(alphabet, AjLatexMath.getAssetManager()

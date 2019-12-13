@@ -150,7 +150,7 @@ public class DefaultTeXFontParser {
 		}
 	}
 
-	public static final String RESOURCE_NAME = "DefaultTeXFont.xml";
+	public static final String RESOURCE_NAME = "latex/DefaultTeXFont.xml";
 
 	public static final String STYLE_MAPPING_EL = "TextStyleMapping";
 	public static final String SYMBOL_MAPPING_EL = "SymbolMapping";
@@ -386,7 +386,7 @@ public class DefaultTeXFontParser {
 	public static Typeface createFont(String name)
 			throws ResourceParseException {
 		Typeface f = Typeface.createFromAsset(AjLatexMath.getAssetManager(),
-				"fonts/" + name);
+				"latex/fonts/" + name);
 		return f;
 
 	}

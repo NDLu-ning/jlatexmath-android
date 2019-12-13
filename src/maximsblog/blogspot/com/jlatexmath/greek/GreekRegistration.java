@@ -47,6 +47,6 @@ public class GreekRegistration implements AlphabetRegistration {
 	}
 
 	public String getTeXFontFileName() {
-		return "fonts/language_greek.xml";
+		return "latex/fonts/language_greek.xml";
 	}
 }

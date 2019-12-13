@@ -185,6 +185,9 @@ final class PredefinedCommands {
 		MacroInfo.Commands.put("Set", new PredefMacroInfo(145, 1));
 		MacroInfo.Commands.put("underset", new PredefMacroInfo(146, 2));
 		MacroInfo.Commands.put("boldsymbol", new PredefMacroInfo(147, 1));
+		// TODO: 15/10/16 自己添加和boldsymbol同为加粗黑体
+		MacroInfo.Commands.put("pmb", new PredefMacroInfo(147, 2));
+
 		MacroInfo.Commands.put("LaTeX", new PredefMacroInfo(148, 0));
 		MacroInfo.Commands.put("GeoGebra", new PredefMacroInfo(149, 0));
 		MacroInfo.Commands.put("big", new PredefMacroInfo(150, 1));

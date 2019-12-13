@@ -232,10 +232,12 @@ public class TeXIcon {
 	public void paintIcon(Canvas g, int x, int y) {
 		Canvas g2 = (Canvas) g;
 
+		g2.save();
 		g2.scale(size, size); // the point size
 
 		// draw formula box
 		box.draw(g2, (x + insets.left) / size,
 				(y + insets.top) / size + box.getHeight());
+		g2.restore();
 	}
 }

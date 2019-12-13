@@ -45,7 +45,7 @@ import org.w3c.dom.NodeList;
  */
 public class TeXFormulaSettingsParser {
 
-	public static final String RESOURCE_NAME = "TeXFormulaSettings.xml";
+	public static final String RESOURCE_NAME = "latex/TeXFormulaSettings.xml";
 	public static final String CHARTODEL_MAPPING_EL = "Map";
 
 	private Element root;
