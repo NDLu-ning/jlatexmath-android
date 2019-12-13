@@ -31,22 +31,22 @@
 <TeXFont>
 
 <SymbolMappings>
-  <Mapping include="fonts/jlm_greek.map.xml" />
+  <Mapping include="latex/fonts/jlm_greek.map.xml" />
 </SymbolMappings>
 
 <FontDescriptions>
-  <Metrics include="fonts/jlm_fcmbipg.xml" />
-  <Metrics include="fonts/jlm_fcmbpg.xml" />
-  <Metrics include="fonts/jlm_fcmripg.xml" />
-  <Metrics include="fonts/jlm_fcmrpg.xml" />
-  <Metrics include="fonts/jlm_fcsbpg.xml" />
-  <Metrics include="fonts/jlm_fcsropg.xml" />
-  <Metrics include="fonts/jlm_fcsrpg.xml" />
-  <Metrics include="fonts/jlm_fctrpg.xml" />
+  <Metrics include="latex/fonts/jlm_fcmbipg.xml" />
+  <Metrics include="latex/fonts/jlm_fcmbpg.xml" />
+  <Metrics include="latex/fonts/jlm_fcmripg.xml" />
+  <Metrics include="latex/fonts/jlm_fcmrpg.xml" />
+  <Metrics include="latex/fonts/jlm_fcsbpg.xml" />
+  <Metrics include="latex/fonts/jlm_fcsropg.xml" />
+  <Metrics include="latex/fonts/jlm_fcsrpg.xml" />
+  <Metrics include="latex/fonts/jlm_fctrpg.xml" />
 </FontDescriptions>
 
-<TeXSymbols include="fonts/symbols_greek.xml" />
+<TeXSymbols include="latex/fonts/symbols_greek.xml" />
 
-<FormulaSettings include="fonts/mappings_greek.xml" />
+<FormulaSettings include="latex/fonts/mappings_greek.xml" />
 
 </TeXFont>

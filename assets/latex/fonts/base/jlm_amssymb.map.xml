@@ -132,7 +132,7 @@
   <SymbolMapping name="nsucc" ch="168" fontId="jlm_msbm10" />
   <SymbolMapping name="lneqq" ch="169" fontId="jlm_msbm10" />
   <SymbolMapping name="gneqq" ch="170" fontId="jlm_msbm10" />
-  <SymbolMapping name="nleqslant" ch="173" fontId="jlm_msbm10" />
+  <SymbolMapping name="nleqslant" ch="172" fontId="jlm_msbm10" />
   <SymbolMapping name="ngeqslant" ch="174" fontId="jlm_msbm10" />
   <SymbolMapping name="lneq" ch="175" fontId="jlm_msbm10" />
   <SymbolMapping name="gneq" ch="176" fontId="jlm_msbm10" />
