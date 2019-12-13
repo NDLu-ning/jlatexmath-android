@@ -1,4 +1,4 @@
-package maximsblog.blogspot.com.jlatexmath;
+package com.example.letex.demo;
 
 import java.io.File;
 import java.io.FileOutputStream;

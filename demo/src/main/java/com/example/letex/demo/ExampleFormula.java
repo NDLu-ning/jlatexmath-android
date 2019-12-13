@@ -1,4 +1,4 @@
-package maximsblog.blogspot.com.jlatexmath;
+package com.example.letex.demo;
 
 public class ExampleFormula {
 	private static String mExample1 = "\\begin{array}{lr}\\mbox{\\textcolor{Blue}{Russian}}&\\mbox{\\textcolor{Melon}{Greek}}\\\\"

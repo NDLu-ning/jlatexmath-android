@@ -1,3 +1,14 @@
+# Gradle
+.gradle/
+build/
+/gradlew
+/gradle/
+/gradlew.bat
+
+# IntelliJ generated files/folders
+.idea/
+*.iml
+
 # built application files
 *.apk
 *.ap_

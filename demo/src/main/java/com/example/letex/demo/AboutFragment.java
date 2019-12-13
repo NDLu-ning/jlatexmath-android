@@ -1,4 +1,4 @@
-package maximsblog.blogspot.com.jlatexmath;
+package com.example.letex.demo;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
