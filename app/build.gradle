@@ -6,6 +6,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
+        versionCode 10000
+        versionName "1.0.0"
     }
 
     sourceSets {
@@ -19,9 +21,14 @@ android {
         }
     }
 
+    def commitId = "git rev-parse --short=7 HEAD".execute([], rootDir).text.trim()
 
     buildTypes {
+        debug {
+            buildConfigField "String", "COMMIT_ID", "\"$commitId\""
+        }
         release {
+            buildConfigField "String", "COMMIT_ID", "\"$commitId\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
